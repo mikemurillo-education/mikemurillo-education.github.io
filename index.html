@@ -15,6 +15,78 @@
       background: #f7f7f5;
     }
 
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand-name {
+      font-weight: 700;
+      color: #222;
+      font-size: 1rem;
+    }
+
+    .brand-subtitle {
+      color: #666;
+      font-size: 0.85rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: #005f73;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-links a.active {
+      color: #222;
+      border-bottom: 2px solid #005f73;
+      padding-bottom: 3px;
+    }
+
+    @media (max-width: 700px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+        gap: 12px;
+      }
+    }
+    
     header {
       background: white;
       padding: 32px;
@@ -62,13 +134,22 @@
     <h1>Mike Murillo</h1>
     <p>Kindergarten and Primary Teacher | Early Literacy | EAL/ESL | Inquiry-Based Learning</p>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#philosophy">Teaching Philosophy</a>
-  <a href="evidence.html">Evidence</a>
-  <a href="#resume">Resume</a>
-  <a href="#privacy">Privacy</a>
-  <a href="#contact">Contact</a>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <span class="brand-name">Mike Murillo</span>
+      <span class="brand-subtitle">Teaching Portfolio</span>
+    </div>
+
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#philosophy">Philosophy</a>
+      <a href="evidence.html">Evidence</a>
+      <a href="index.html#resume">Resume</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </div>
 </nav>
   </header>
 
