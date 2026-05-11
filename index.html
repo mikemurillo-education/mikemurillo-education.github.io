@@ -3,16 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Mike Murillo | Teaching Portfolio</title>
+
+  <meta
+    name="description"
+    content="Mike Murillo's teaching portfolio for early years, kindergarten, primary, early literacy, EAL/ESL, and inquiry-based learning."
+  />
+
   <style>
+    :root {
+      --background: #f7f7f5;
+      --card: #ffffff;
+      --text: #222222;
+      --muted: #666666;
+      --accent: #005f73;
+      --accent-dark: #034752;
+      --border: #e5e5e5;
+      --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+      --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      color: #222;
-      background: #f7f7f5;
+      color: var(--text);
+      background: var(--background);
     }
 
     .site-nav {
@@ -20,8 +45,8 @@
       top: 0;
       z-index: 1000;
       background: #ffffff;
-      border-bottom: 1px solid #e5e5e5;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .nav-inner {
@@ -42,12 +67,12 @@
 
     .brand-name {
       font-weight: 700;
-      color: #222;
+      color: var(--text);
       font-size: 1rem;
     }
 
     .brand-subtitle {
-      color: #666;
+      color: var(--muted);
       font-size: 0.85rem;
     }
 
@@ -59,7 +84,7 @@
     }
 
     .nav-links a {
-      color: #005f73;
+      color: var(--accent);
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
@@ -70,12 +95,141 @@
     }
 
     .nav-links a.active {
-      color: #222;
-      border-bottom: 2px solid #005f73;
+      color: var(--text);
+      border-bottom: 2px solid var(--accent);
       padding-bottom: 3px;
     }
 
-    @media (max-width: 700px) {
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      background: var(--card);
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.5rem, 6vw, 4.25rem);
+      line-height: 1;
+    }
+
+    .hero-text {
+      max-width: 650px;
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: #333333;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      border: 2px solid var(--accent);
+    }
+
+    .button:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .button.secondary:hover {
+      background: #eef7f8;
+      color: var(--accent-dark);
+      border-color: var(--accent-dark);
+    }
+
+    .hero-image-wrapper {
+      flex: 0 0 auto;
+    }
+
+    .hero-headshot {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border: 6px solid #ffffff;
+      box-shadow: var(--shadow-strong);
+      background: #eeeeee;
+    }
+
+    section {
+      background: var(--card);
+      padding: 28px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    h2,
+    h3 {
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    .artifact {
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 760px) {
       .nav-inner {
         flex-direction: column;
         align-items: flex-start;
@@ -85,182 +239,255 @@
         justify-content: flex-start;
         gap: 12px;
       }
-    }
-    
-    header {
-      background: white;
-      padding: 32px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
 
-    section {
-      background: white;
-      padding: 28px;
-      border-radius: 16px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    }
+      .page-wrap {
+        padding: 24px 16px 36px;
+      }
 
-    h1, h2 {
-      margin-top: 0;
-    }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 32px 24px;
+      }
 
-    nav a {
-      margin-right: 16px;
-      color: #005f73;
-      text-decoration: none;
-      font-weight: bold;
-    }
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
 
-    .artifact {
-      border-left: 4px solid #005f73;
-      padding-left: 16px;
-      margin: 20px 0;
-    }
+      .hero-actions {
+        justify-content: center;
+      }
 
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 40px;
+      .hero-headshot {
+        width: 160px;
+        height: 160px;
+      }
+
+      section {
+        padding: 24px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <h1>Mike Murillo</h1>
-    <p>Kindergarten and Primary Teacher | Early Literacy | EAL/ESL | Inquiry-Based Learning</p>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="brand">
+        <span class="brand-name">Mike Murillo</span>
+        <span class="brand-subtitle">Teaching Portfolio</span>
+      </div>
 
-<nav class="site-nav">
-  <div class="nav-inner">
-    <div class="brand">
-      <span class="brand-name">Mike Murillo</span>
-      <span class="brand-subtitle">Teaching Portfolio</span>
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="evidence.html">Evidence of Practice</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="nav-links">
-      <a class="active" href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#philosophy">Philosophy</a>
-      <a href="evidence.html">Evidence</a>
-      <a href="index.html#resume">Resume</a>
-      <a href="index.html#contact">Contact</a>
-    </div>
-  </div>
-</nav>
-  </header>
+  <main class="page-wrap">
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Early Years • Primary • EAL/ESL • Early Literacy</p>
 
-<section id="about">
-  <h2>About Me</h2>
+        <h1>Mike Murillo</h1>
 
-  <p>
-    Hi, I’m Mike Murillo, an early years and primary teacher from Chicago, currently based in Chengdu, China. I have spent more than 10 years teaching young learners in China and Southeast Asia, especially multilingual students who are building confidence in English, early literacy, and classroom communication.
-  </p>
+        <p class="hero-text">
+          Kindergarten and primary educator supporting young multilingual learners
+          through early literacy, phonics, structured routines, inquiry, and warm
+          classroom relationships.
+        </p>
 
-  <p>
-    My teaching style is warm, structured, and active. I believe young children need to feel safe and understood before they can take real learning risks, but they also need clear routines, steady expectations, and plenty of chances to practice. In my classroom, I use movement, songs, stories, visuals, games, and hands-on activities to help students stay engaged and build independence.
-  </p>
+        <div class="hero-actions">
+          <a class="button" href="evidence.html">View Evidence of Practice</a>
 
-  <p>
-    A major part of my recent teaching has focused on early literacy and phonics. I enjoy helping children connect sounds to letters, blend CVC words, use decodable reading routines, and grow from “I can’t read this” to “Let me try.” This portfolio shares selected evidence from my teaching practice, Moreland University clinical work, lesson planning, assessment, family communication, and reflection.
-  </p>
-</section>
+          <a
+            class="button secondary"
+            href="Michael_Murillo_Resume_2026_Public.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Resume
+          </a>
 
-<section id="philosophy">
-  <h2>Teaching Philosophy</h2>
+          <a class="button secondary" href="mailto:mikemurillo.edu@icloud.com">
+            Contact Me
+          </a>
+        </div>
+      </div>
 
-  <p>
-    I believe young children learn best in classrooms where they feel safe, known, and gently challenged. My teaching is built around clear routines, warm relationships, movement, language practice, and repeated chances to succeed. For multilingual learners, especially in the early years, confidence grows when students have enough structure to understand what is expected and enough encouragement to keep trying.
-  </p>
+      <div class="hero-image-wrapper">
+        <img
+          src="assets/headshot.jpg"
+          alt="Professional headshot of Mike Murillo"
+          class="hero-headshot"
+        />
+      </div>
+    </header>
 
-  <p>
-    A major part of my work is helping children build strong foundations in language and literacy. I use songs, stories, visuals, phonics routines, CVC blending, decodable reading practice, games, and one-to-one support to make early reading feel possible. I also believe good teaching requires careful noticing. I use observation, student work, informal checks, and family communication to understand what students need next and adjust my instruction with patience, fairness, and care.
-  </p>
-</section>
+    <section id="about">
+      <h2>About Me</h2>
 
-<section id="evidence">
-  <h2>Evidence of Practice</h2>
+      <p>
+        Hi, I’m Mike Murillo, an early years and primary teacher from Chicago,
+        currently based in Chengdu, China. I have spent more than 10 years
+        teaching young learners in China and Southeast Asia, especially
+        multilingual students who are building confidence in English, early
+        literacy, and classroom communication.
+      </p>
 
-  <p>
-    This portfolio includes selected evidence from my teaching practice, clinical work, lesson planning, assessment, and reflection. I have organized the evidence around the areas that best represent my work with young multilingual learners.
-  </p>
+      <p>
+        My teaching style is warm, structured, and active. I believe young
+        children need to feel safe and understood before they can take real
+        learning risks, but they also need clear routines, steady expectations,
+        and plenty of chances to practice. In my classroom, I use movement,
+        songs, stories, visuals, games, and hands-on activities to help students
+        stay engaged and build independence.
+      </p>
 
-  <div class="artifact">
-    <h3>Early Literacy and Phonics</h3>
-    <p>
-      Lesson examples, routines, and reflections focused on letter-sound knowledge, CVC blending, decodable reading, and early reading confidence.
-    </p>
-  </div>
+      <p>
+        A major part of my recent teaching has focused on early literacy and
+        phonics. I enjoy helping children connect sounds to letters, blend CVC
+        words, use decodable reading routines, and grow from “I can’t read this”
+        to “Let me try.” This portfolio shares selected evidence from my teaching
+        practice, Moreland University clinical work, lesson planning, assessment,
+        family communication, and reflection.
+      </p>
+    </section>
 
-  <div class="artifact">
-    <h3>Assessment and Data-Driven Instruction</h3>
-    <p>
-      Examples of informal checks, student work patterns, class-level data, and how assessment helped me adjust instruction and plan next steps.
-    </p>
-  </div>
+    <section id="philosophy">
+      <h2>Teaching Philosophy</h2>
 
-  <div class="artifact">
-    <h3>Differentiation for Multilingual Learners</h3>
-    <p>
-      Evidence of visual supports, modeling, movement, language scaffolds, one-to-one support, and classroom routines that help students with different language levels participate successfully.
-    </p>
-  </div>
+      <p>
+        I believe young children learn best in classrooms where they feel safe,
+        known, and gently challenged. My teaching is built around clear routines,
+        warm relationships, movement, language practice, and repeated chances to
+        succeed. For multilingual learners, especially in the early years,
+        confidence grows when students have enough structure to understand what
+        is expected and enough encouragement to keep trying.
+      </p>
 
-  <div class="artifact">
-    <h3>Classroom Culture and SEL</h3>
-    <p>
-      Examples of routines, emotional regulation strategies, movement-based learning, and relationship-building practices that support young learners’ confidence and self-control.
-    </p>
-  </div>
+      <p>
+        A major part of my work is helping children build strong foundations in
+        language and literacy. I use songs, stories, visuals, phonics routines,
+        CVC blending, decodable reading practice, games, and one-to-one support
+        to make early reading feel possible. I also believe good teaching
+        requires careful noticing. I use observation, student work, informal
+        checks, and family communication to understand what students need next
+        and adjust my instruction with patience, fairness, and care.
+      </p>
+    </section>
 
-<p>
-  <a href="evidence.html">View detailed evidence of practice</a>
-</p>
-</section>
+    <section id="evidence">
+      <h2>Evidence of Practice</h2>
 
-<section id="resume">
-  <h2>Resume</h2>
+      <p>
+        This portfolio includes selected evidence from my teaching practice,
+        clinical work, lesson planning, assessment, and reflection. I have
+        organized the evidence around the areas that best represent my work with
+        young multilingual learners.
+      </p>
 
-  <p>
-    My public teaching resume includes my current kindergarten homeroom role, early literacy and phonics experience, EAL/ESL background, Moreland University teacher preparation, and international teaching experience across China and Southeast Asia.
-  </p>
+      <div class="artifact">
+        <h3>Early Literacy and Phonics</h3>
+        <p>
+          Lesson examples, routines, and reflections focused on letter-sound
+          knowledge, CVC blending, decodable reading, and early reading
+          confidence.
+        </p>
+      </div>
 
-  <p>
-    <a href="Michael_Murillo_Resume_2026_Public.pdf" target="_blank" rel="noopener noreferrer">
-      View my resume
-    </a>
-  </p>
-</section>
+      <div class="artifact">
+        <h3>Assessment and Data-Driven Instruction</h3>
+        <p>
+          Examples of informal checks, student work patterns, class-level data,
+          and how assessment helped me adjust instruction and plan next steps.
+        </p>
+      </div>
 
-<section id="contact">
-  <h2>Contact</h2>
+      <div class="artifact">
+        <h3>Differentiation for Multilingual Learners</h3>
+        <p>
+          Evidence of visual supports, modeling, movement, language scaffolds,
+          one-to-one support, and classroom routines that help students with
+          different language levels participate successfully.
+        </p>
+      </div>
 
-  <p>
-    I am currently based in Chengdu, China, and am open to early years, kindergarten, primary homeroom, and EAL/ESL teaching opportunities in international school settings.
-  </p>
+      <div class="artifact">
+        <h3>Classroom Culture and SEL</h3>
+        <p>
+          Examples of routines, emotional regulation strategies, movement-based
+          learning, and relationship-building practices that support young
+          learners’ confidence and self-control.
+        </p>
+      </div>
 
-<p>
-  Email: <a href="mailto:mikemurillo.edu@icloud.com">mikemurillo.edu@icloud.com</a>
-</p>
+      <p>
+        <a href="evidence.html">View detailed evidence of practice</a>
+      </p>
+    </section>
 
-  <p>
-    Additional materials, references, and privacy-protected teaching evidence are available upon request.
-  </p>
-</section>
+    <section id="resume">
+      <h2>Resume</h2>
 
-<section id="privacy">
-  <h2>Student Privacy</h2>
+      <p>
+        My public teaching resume includes my current kindergarten homeroom role,
+        early literacy and phonics experience, EAL/ESL background, Moreland
+        University teacher preparation, and international teaching experience
+        across China and Southeast Asia.
+      </p>
 
-  <p>
-    Student names, faces, and identifying details have been removed or changed to protect student privacy. Full classroom videos are not posted publicly. When appropriate, selected teaching evidence may be discussed privately with hiring teams in a privacy-conscious format.
-  </p>
-</section>
-  
-  <footer>
-    <p>© 2026 Mike Murillo</p>
-  </footer>
+      <p>
+        <a
+          href="Michael_Murillo_Resume_2026_Public.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Mike Murillo’s public teaching resume PDF
+        </a>
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <p>
+        I am currently based in Chengdu, China, and am open to early years,
+        kindergarten, primary homeroom, and EAL/ESL teaching opportunities in
+        international school settings.
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:mikemurillo.edu@icloud.com">
+          mikemurillo.edu@icloud.com
+        </a>
+      </p>
+
+      <p>
+        Additional materials, references, and privacy-protected teaching evidence
+        are available upon request.
+      </p>
+    </section>
+
+    <section id="privacy">
+      <h2>Student Privacy</h2>
+
+      <p>
+        Student names, faces, and identifying details have been removed or
+        changed to protect student privacy. Full classroom videos are not posted
+        publicly. When appropriate, selected teaching evidence may be discussed
+        privately with hiring teams in a privacy-conscious format.
+      </p>
+    </section>
+
+    <footer>
+      <p>© 2026 Mike Murillo</p>
+    </footer>
+  </main>
 </body>
 </html>
